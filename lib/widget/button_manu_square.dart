@@ -23,8 +23,8 @@ class ButtonManuSquare extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
           side: const BorderSide(
-            color:  Color.fromARGB(255, 77, 63, 44), // สีของขอบ
-            width: 2, // ความหนาของขอบ
+            color:  Color.fromARGB(255, 77, 63, 44), 
+            width: 2, 
           ),
         ),
       ),
@@ -32,5 +32,3 @@ class ButtonManuSquare extends StatelessWidget {
     );
   }
 }
-
-//crossAxiis

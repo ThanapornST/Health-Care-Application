@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:healthcares/information_home_page/personnol_details.dart';
-import 'package:healthcares/one_home_page/calculate_food_calories.dart';
-//import 'package:healthcares/one_home_page/calculate_food_calories.dart';
+import 'package:healthcares/widget/button_manu.dart';
+import 'package:healthcares/screen/PersonnolDetail.dart';
 import 'package:healthcares/widget/intro/swiper_images.dart';
 
 class HealthCares extends StatefulWidget {
@@ -50,4 +49,3 @@ class _HealthCaresState extends State<HealthCares> {
     );
   }
 }
-// PersonnolDetails() 

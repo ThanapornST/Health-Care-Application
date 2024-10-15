@@ -13,15 +13,15 @@ class ContainerDecoration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(15), // เพิ่ม padding เพื่อให้เนื้อหาไม่ชิดขอบกล่อง
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 255, 255, 237),
         border: Border.all(
-          color: const Color.fromARGB(255, 77, 63, 44),
-          width: 4,
-        ),
-        borderRadius: BorderRadius.circular(15),
+            color: const Color.fromARGB(255, 77, 63, 44),
+            width: 4),
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
+      height: 100, 
+      width: 400,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Row(

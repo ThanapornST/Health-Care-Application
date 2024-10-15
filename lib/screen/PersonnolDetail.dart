@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthcares/one_home_page/calculate_food_calories.dart';
+import 'package:healthcares/widget/button_manu.dart';
 import 'package:healthcares/widget/container_decoration.dart';
 
 class PersonnolDetails extends StatefulWidget {
@@ -29,28 +29,6 @@ class _PersonnolDetailsState extends State<PersonnolDetails> {
     }
   }
 
-  void _continue() {
-    String? height = heightController.text;
-    String? weight = weightController.text;
-
-    if (selectedGender == null) {
-      _showErrorDialog("Please select your birthday.");
-    } else if (selectedDate == null) {
-      _showErrorDialog("Please enter your height.");
-    } else if (height.isEmpty) {
-      _showErrorDialog("Please enter your weight.");
-    } else if (weight.isEmpty) {
-      _showErrorDialog("Please select a gender..");
-    } else {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const CalculateFoodCalories(),
-        ),
-      );
-    }
-  }
-
   void _showErrorDialog(String message) {
     showDialog(
       context: context,
@@ -71,40 +49,60 @@ class _PersonnolDetailsState extends State<PersonnolDetails> {
     );
   }
 
+  void _continue() {
+    String? height = heightController.text;
+    String? weight = weightController.text;
+
+    if (selectedGender == null) {
+      _showErrorDialog("Please select your birthday.");
+    } else if (selectedDate == null) {
+      _showErrorDialog("Please enter your height.");
+    } else if (height.isEmpty) {
+      _showErrorDialog("Please enter your weight.");
+    } else if (weight.isEmpty) {
+      _showErrorDialog("Please select a gender.");
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const CalculateFoodCalories(),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
           children: [
             Container(
-              width: double.infinity,
-              height: 150,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color.fromARGB(255, 77, 63, 44),
-                    Color.fromARGB(0, 255, 255, 255)
+                    Color.fromARGB(255, 77, 63, 44), 
+                    Color.fromARGB(255, 167, 157, 144), 
+                    Color.fromARGB(0, 255, 255,
+                        255), 
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
               ),
+              height: 300,
               child: const Center(
                 child: Text(
-                  'Personnol Details',
+                  "Personnol Details",
                   style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 77, 63, 44),
-                  ),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 46, 40, 32)),
                 ),
               ),
             ),
             const SizedBox(
-              height: 80,
+              height: 3,
             ),
             ContainerDecoration(
               text: 'Birthday',
@@ -137,10 +135,11 @@ class _PersonnolDetailsState extends State<PersonnolDetails> {
             ContainerDecoration(
               text: 'Height',
               child: SizedBox(
-                width: 20,
+                width: 200,
                 child: TextField(
                   controller: heightController,
                   keyboardType: TextInputType.number,
+                  textAlign: TextAlign.right,
                   decoration:
                       const InputDecoration(hintText: 'Enter your height (cm)'),
                 ),
@@ -152,10 +151,11 @@ class _PersonnolDetailsState extends State<PersonnolDetails> {
             ContainerDecoration(
               text: 'Weight',
               child: SizedBox(
-                width: 20,
+                width: 200,
                 child: TextField(
                   controller: weightController,
                   keyboardType: TextInputType.number,
+                  textAlign: TextAlign.right, 
                   decoration: const InputDecoration(
                     hintText: 'Enter your weight (kg)',
                   ),
@@ -190,25 +190,21 @@ class _PersonnolDetailsState extends State<PersonnolDetails> {
               ),
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 77, 63, 44),
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 4,
-                    blurRadius: 8,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 77, 63, 44), 
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20), 
+                  topRight: Radius.circular(20), 
+                ),
               ),
+              height: 156,
               padding: const EdgeInsets.all(50),
               child: ElevatedButton(
                 onPressed: _continue,
-                child: const Text('Continue'),
+                child:  Text("Continue"),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 60),
                   backgroundColor: const Color.fromARGB(255, 252, 250, 223),

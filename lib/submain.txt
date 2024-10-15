@@ -1,0 +1,47 @@
+/*import 'package:flutter/material.dart';
+import 'package:healthcares/widget/swiper_main_manu.dart';
+import 'package:healthcares/models/meal.dart'; // Import model ของคุณ
+//import 'package:healthcares/data/dummy_meals.dart'; // Import dummy data ของคุณ
+
+class MainManuScreen extends StatelessWidget {
+  const MainManuScreen({super.key, required this.meal});
+
+  final Meal meal;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(meal.title),
+        backgroundColor: const Color.fromARGB(255, 77, 63, 44),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Image.network(meal.imageUrl),
+            const SizedBox(height: 20),
+            Text(
+              'Duration: ${meal.duration} mins',
+              style: const TextStyle(fontSize: 18),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Ingredients:',
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            ...meal.ingredients
+                .map((ingredient) => Text('- $ingredient'))
+                .toList(),
+            const SizedBox(height: 20),
+            Text(
+              'Steps:',
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            ...meal.steps.map((step) => Text(step)).toList(),
+          ],
+        ),
+      ),
+    );
+  }
+}*/
